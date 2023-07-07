@@ -1,0 +1,76 @@
+.main-home{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.aside-home{
+    display: flex;
+    flex-direction: column;
+    background-color: #C6CED0;
+    width: 40%;
+    height: 100%;
+}
+
+.figure-home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-logo{
+    max-width: 40%;
+    padding-bottom: 25%;
+}
+
+.img-señora{
+    width: 100%;
+}
+
+.navbar-home-pattern{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-home{
+    height: 5%;
+    border-top: 2px solid #828282;
+    border-bottom: 2px solid #828282;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10%;
+}
+
+.li-home{
+    list-style: none;
+}
+
+.a-home{
+    text-decoration: none;
+    color: #476268;
+    cursor: pointer;
+}
+
+.a-home:hover{
+    color: #40A798;
+}
+
+.p-home{
+    text-align: justify;
+    padding: 7%;
+}
+
+.button-home{
+    width: 40%;
+    height: 6%;
+    border-radius: 10px;
+    background-color:rgb(64,167,152);
+    color: white;
+    border: none;
+    margin: 30px auto 30px auto;
+}

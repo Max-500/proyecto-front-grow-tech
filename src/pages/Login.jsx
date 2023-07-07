@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Logo from "../assets/Logo.svg"
 import Family from "../assets/Family.svg"
 import NewAccount from "../components/NewAccount";
+import ButtonShared from "../components/ButtonShared";
 
 import "../public/css/SharedSection.css"
 
@@ -16,7 +17,7 @@ const Login = () => {
             <main className="main-shared">
                 <SharedSection img1={Logo} img2={Family} />
                 <SharedAside newAccount={<NewAccount />}>
-                    <button className="button-form-shared" type="submit">Iniciar Sesion</button>
+                    <ButtonShared title="Inciar Sesion" />
                 </SharedAside>
             </main>
                 <Footer />
