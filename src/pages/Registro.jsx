@@ -1,4 +1,3 @@
-import "../public/css/Registro.css"
 import SharedSection from "../components/SharedSection";
 
 import Logo from "../assets/Logo.svg"
@@ -7,6 +6,7 @@ import Footer from "../components/Footer";
 import SharedAside from "../components/SharedAside";
 import InputEmail from "../components/InputEmail";
 import ButtonShared from "../components/ButtonShared";
+import "../public/css/SharedSection.css"
 
 const Registro = () => {
     return ( 

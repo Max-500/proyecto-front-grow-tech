@@ -1,4 +1,3 @@
-import "../public/css/Login.css"
 import SharedSection from "../components/SharedSection";
 import SharedAside from "../components/SharedAside"
 import Footer from "../components/Footer";
@@ -20,7 +19,7 @@ const Login = () => {
                     <ButtonShared title="Inciar Sesion" />
                 </SharedAside>
             </main>
-                <Footer />
+            <Footer />
         </>
     )
 }

@@ -1,3 +1,9 @@
+.main-shared{
+    height: 80%;
+    width: 100%;
+    display: flex;
+}
+
 .shared-section {
     width: 45%;
     height: 100%;
@@ -19,33 +25,17 @@
     max-width: 95%;
     max-height: 45%;
     position: relative;
-    top: -20%;
+    top: 50%;
 }
 
 .img-logo {
     max-width: 35%;
     position: relative;
-    top: 80px;
+    top: 20px;
 }
 
 .img-shared-section {
     width: 100%;
-    position: relative;
-    top: -100px;
-}
-
-@media (max-width: 1030px) {
-    .shared-section {
-        min-height: 30%;
-        width: 100%;
-    }
-    .img-logo{
-        position: relative;
-        margin-bottom: 20px;
-    }
-    .img-shared-section {
-        width: 70%;
-    }
 }
 
 /*Pantallas más pequeñas */
@@ -53,17 +43,31 @@
     .main-shared {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        height: 80%;
     }
 
     .shared-section {
-        min-height: 20%;
+        max-height: 20%;
         width: 100%;
     }
 
+    .shared-aside{
+        max-height: 80%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .form-shared{
+        width: 100%;
+        top: 0%;
+        left: 0%;
+    }
+
     .img-logo {
-        width: 40%;
-        position: relative;
-        top: 70px;
+        width: 60%;
+        height: 60%;
     }
 
     .img-shared-section {

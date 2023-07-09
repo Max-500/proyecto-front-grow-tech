@@ -1,7 +1,7 @@
 import AsideHome from "../components/AsideHome";
 import ButtonHome from "../components/ButtonHome";
 import ComponentHome from "../components/ComponentHome";
-import "../public/css/AsideHome.css"
+import "../public/css/Home.css"
 
 const Home = () => {
 

@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import "../public/css/SharedSection.css"
-
 const SharedSection = ({ img1, img2 }) => {
 
     return (
