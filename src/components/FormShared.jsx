@@ -41,7 +41,7 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
                 <h1>Grow Tech</h1>
 
                 <div>
-                    <label htmlFor="">
+                    <label className="label-form-shared" htmlFor="">
                         <h4 className="h4-form-shared">Usuario</h4>
                     </label>
                 </div>
@@ -51,7 +51,7 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
                 {inputEmail}
 
                 <div>
-                    <label htmlFor="">
+                    <label className="label-form-shared" htmlFor="">
                         <h4 className="h4-form-shared">Contraseña</h4>
                     </label>
                 </div>

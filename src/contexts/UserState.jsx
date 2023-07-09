@@ -6,7 +6,7 @@ const UserState = ({ children }) => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [token, setToken] = useState("jwt")
+    const [token, setToken] = useState("")
 
     const newName = (value) => {
         setName(value);

@@ -12,7 +12,7 @@ const InputEmail = () => {
     return (
         <>
             <div>
-                <label htmlFor="">
+                <label className="label-form-shared" htmlFor="">
                     <h4 className="h4-form-shared">Correo Electronico</h4>
                 </label>
             </div>
