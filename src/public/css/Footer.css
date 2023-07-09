@@ -28,10 +28,10 @@
 
 @media screen and (max-width: 920px) {
     .p-footer{
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .img-footer{
-        width: 70%;
+        width: 90%;
     }
 }
