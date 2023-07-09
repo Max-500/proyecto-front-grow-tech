@@ -1,11 +1,11 @@
-.main-home{
+.main-principal{
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 100%;
 }
 
-.aside-home{
+.aside-principal{
     display: flex;
     flex-direction: column;
     background-color: #C6CED0;
@@ -13,7 +13,7 @@
     height: 100%;
 }
 
-.figure-home{
+.figure-principal{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,24 +21,25 @@
     margin: 0px 40px 0px 40px;
 }
 
-.img-logo-home{
+.img-logo-principal{
     width: 50%;
     padding-top: 5%;
 }
 
-.img-señora-home{
-    width: 80%;
-    padding-top: 20%;
+.img-señora-principal{
+    max-width: 40%;
+    position: relative;
+    top: -110px;
 }
 
-.navbar-home-pattern{
+.navbar-principal-pattern{
     max-width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.navbar-home{
+.navbar-principal{
     height: 5%;
     border-top: 2px solid #828282;
     border-bottom: 2px solid #828282;
@@ -50,26 +51,26 @@
     width: 100%;
 }
 
-.li-home{
+.li-principal{
     list-style: none;
 }
 
-.a-home{
+.a-principal{
     text-decoration: none;
     color: #476268;
     cursor: pointer;
 }
 
-.a-home:hover{
+.a-principal:hover{
     color: #40A798;
 }
 
-.p-home{
+.p-principal{
     text-align: center;
     font-size: 18px;
 }
 
-.button-home{
+.button-principal{
     width: 40%;
     height: 6%;
     border-radius: 10px;
@@ -81,111 +82,109 @@
 
 /* Estilos para telefonos moviles */
 @media (max-width: 599px) {
-    .p-home{
+    .p-principal{
         font-size: 12px;
         width: 100%;
     }
 
-    .figure-home{
+    .figure-principal{
         min-width: 100%;
         margin: 0;
     }
     
-    .img-logo-home{
+    .img-logo-principal{
         min-width: 80%;
         position: relative;
         top: 8%;
     }
     
-    .img-señora-home{
+    .img-señora-principal{
         min-width: 100%;
         padding-top: 70%;
+        top: 0%;
     }
 
-    .navbar-home{
+    .navbar-principal{
         padding: 0;
         margin-top: 10%;
     }
 
-    .a-home{
+    .a-principal{
         font-size: 14px;
     }
 
-    .button-home{
+    .button-principal{
         font-size: 15px;
     }
 }
 
 /* Estilos para tablets pequeñas */
 @media (min-width: 600px) { 
-    .p-home{
+    .p-principal{
         font-size: 16px;
         width: 100%;
     }
 
-    .a-home{
+    .a-principal{
         font-size: 28px;
     }
 
-    .figure-home{
+    .figure-principal{
         min-width: 100%;
         margin: 0;
     }
     
-    .img-logo-home{
+    .img-logo-principal{
         min-width: 80%;
         position: relative;
-        top: 8%;
     }
     
-    .img-señora-home{
+    .img-señora-principal{
         min-width: 100%;
-        padding-top: 70%;
+       padding-top: 50%;
     }
 
-    .navbar-home{
+    .navbar-principal{
         margin-top: 20%;
         padding: 0;
     }
 
-    .button-home{
+    .button-principal{
         font-size: 25px;
     }
 }
 
 /* Estilos para tablets grandes */
 @media (min-width: 900px) { 
-    .p-home{
+    .p-principal{
         font-size: 18px;
         width: 100%;
     }
 
-    .a-home{
+    .a-principal{
         font-size: 32px;
     }
 
-    .figure-home{
+    .figure-principal{
         min-width: 100%;
         margin: 0;
         height: 100%;
     }
     
-    .img-logo-home{
+    .img-logo-principal{
         min-width: 60%;
-        position: relative;
-        top: 5%;
     }
     
-    .img-señora-home{
-        min-width: 100%;
-        padding-top: 30%;
+    .img-señora-principal{
+        max-height: 60%;
+        padding-top: 40%;
     }
 
-    .navbar-home{
+    .navbar-principal{
         margin-top: 10%;
     }
 
-    .button-home{
+    .button-principal{
         font-size: 30px;
     }
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const ComponentHome = () => {
 
-    const home = <p className="p-home">Lorem ipsum DE HOME dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
+    const home = <p className="p-principal">Lorem ipsum DE HOME dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
         orci eu porta, nam habitasse quis nullam lacinia parturient sed. Mus tincidunt mattis molestie euismod egestas,
         nascetur dictumst vitae magna rhoncus nullam, turpis morbi eleifend nulla. Quisque aptent quam enim donec
         parturient nascetur primis varius, laoreet class dictumst penatibus metus massa potenti faucibus, eros iaculis
@@ -14,7 +14,7 @@ const ComponentHome = () => {
         proin penatibus nullam, sem condimentum bibendum mattis semper ornare fermentum neque interdum, cum auctor
         habitant suspendisse nisl suscipit nam.</p>
 
-    const aboutUs = <p className="p-home">Lorem ipsum DE ABOUT US dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
+    const aboutUs = <p className="p-principal">Lorem ipsum DE ABOUT US dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
         orci eu porta, nam habitasse quis nullam lacinia parturient sed. Mus tincidunt mattis molestie euismod egestas,
         nascetur dictumst vitae magna rhoncus nullam, turpis morbi eleifend nulla. Quisque aptent quam enim donec
         parturient nascetur primis varius, laoreet class dictumst penatibus metus massa potenti faucibus, eros iaculis
@@ -26,7 +26,7 @@ const ComponentHome = () => {
         proin penatibus nullam, sem condimentum bibendum mattis semper ornare fermentum neque interdum, cum auctor
         habitant suspendisse nisl suscipit nam.</p>
 
-    const contactUs = <p className="p-home">Lorem ipsum DE CONTACT US dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
+    const contactUs = <p className="p-principal">Lorem ipsum DE CONTACT US dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
         orci eu porta, nam habitasse quis nullam lacinia parturient sed. Mus tincidunt mattis molestie euismod egestas,
         nascetur dictumst vitae magna rhoncus nullam, turpis morbi eleifend nulla. Quisque aptent quam enim donec
         parturient nascetur primis varius, laoreet class dictumst penatibus metus massa potenti faucibus, eros iaculis
@@ -57,10 +57,10 @@ const ComponentHome = () => {
 
     return (
         <>
-            <ul className="navbar-home">
-                <li className="li-home"><a onClick={handleLinkClickHome} className="a-home" href="/">Grow Tech</a></li>
-                <li className="li-home"><a onClick={handleLinkClickAboutUs} className="a-home" href="/sobre-nosotros">Sobre Nosotros</a></li>
-                <li className="li-home"><a onClick={handleLinkClickContactUs} className="a-home" href="/contactenos">Contáctenos</a></li>
+            <ul className="navbar-principal">
+                <li className="li-principal"><a onClick={handleLinkClickHome} className="a-principal">Grow Tech</a></li>
+                <li className="li-principal"><a onClick={handleLinkClickAboutUs} className="a-principal">Sobre Nosotros</a></li>
+                <li className="li-principal"><a onClick={handleLinkClickContactUs} className="a-principal">Contáctenos</a></li>
             </ul>
                 {linkText}
         </>
