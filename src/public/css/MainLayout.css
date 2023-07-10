@@ -71,13 +71,39 @@
     flex-direction: row;
 }
 
-.aside-shared {
+.div-aside-shared{
     height: 100%;
     width: 15%;
     margin: 0;
     background-color: #C6CED0;
     display: flex;
     border-top: #C6CED0;
+    flex-direction: column;
+}
+
+.div-button-shared{
+    /*
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+    */
+    display: none;
+}
+
+.button-aside-shared{
+    background-color: transparent;
+    border: none;
+}
+
+.icons{
+    height: 20px;
+}
+
+.aside-shared {
+    height: 100%;
+    width: 90%;
+    margin: 0;
 }
 
 .aside-nav-main-shared {
@@ -94,7 +120,6 @@
     padding-left: 0;
     margin: 0;
     align-content: space-around;
-    height: 100%;
     /*flex-wrap: wrap;*/
 }
 
@@ -130,10 +155,117 @@
     background-color: white;
 }
 
-@media (max-width: 320px) {
-    /* Estilos para celulares pequeños */
+.header-ul-shared>.icons{
+    display: none;
 }
 
+.menu-hamburguesa-false{
+    display: none;
+}
+
+.menu-hamburguesa-true{
+    display: none;
+}
+
+.ul-hamburguesa{
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateY(0%);
+    transition: transform 0.3s;
+}
+
+.li-hamburguesa{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.a-hamburguesa{
+    text-decoration: none;
+    font-size: 15px;
+}
+
+a{
+    color: #476268;
+}
+
+a:hover{
+    color: #40A798;
+}
+
+@media (max-width: 320px) {
+    /* Estilos para celulares pequeños */
+    .div-aside-shared{
+        display: none;
+    }
+
+    .main-shared{
+        width: 100%;
+        position: static;
+        border: none;
+        height: 100%;
+    }
+
+    .header-ul-shared>.icons{
+        display: block;
+    }
+
+    .header-ul-shared>div{
+        display: none;
+    }
+
+    .menu-hamburguesa-false{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: fixed;
+        top: 14.9%;
+        left: 50%;
+        background-color: #C6CED0;
+        border: #C6CED0;
+        width: 50%;
+        margin: 0;
+        height: 100%;
+        transform: translateX(110%);
+        transition: transform 0.5s ease;
+    }
+
+    .menu-hamburguesa-true{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: fixed;
+        top: 14.9%;
+        left: 50%;
+        background-color: #C6CED0;
+        border: #C6CED0;
+        width: 50%;
+        margin: 0;
+        height: 100%;
+        transform: translateX(0);
+        transition: transform 0.5s;
+        height: 85%;
+    }
+
+    .ul-hamburguesa{
+        list-style: none;
+        padding: 0;
+    }
+
+    .a-hamburguesa-exception{
+        text-decoration: none;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .header-shared{
+        position: fixed;
+    }
+
+}
 
 @media (max-width: 767px) {
     /* Estilos para celulares medianos */
