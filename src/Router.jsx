@@ -6,6 +6,7 @@ import Principal from "./pages/Principal"
 import NotFound from "./pages/NotFound";
 import DefaultLayout from "./layouts/DefaultLayout";
 import GuestLayout from "./layouts/GuestLayout";
+import Home from "./pages/Home";
 
 export const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/home",
-                element: <p>Aqui ira el home</p>
+                element: <Home />
             }
         ]
     }, 
