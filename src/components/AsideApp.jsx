@@ -11,7 +11,7 @@ const AsideApp = () => {
                         <ul className="main-ul-shared">
                             <li><FontAwesomeIcon className="icons" icon={faHouse} color="#40A798" /><a href="/home">Pagina Principal</a></li>
                             <li><FontAwesomeIcon className="icons" icon={faChartLine} color="#40A798" /><a href="#">Analisis de Datos</a></li>
-                            <li><FontAwesomeIcon className="icons" icon={faBook} color="#40A798" /><a href="#">Recomendaciones<br />de Cuidado</a></li>
+                            <li><FontAwesomeIcon className="icons" icon={faBook} color="#40A798" /><a href="#">Recomendaciones</a></li>
                             <li><FontAwesomeIcon className="icons" icon={faPaperPlane} color="#40A798" /><a href="#">Ayuda y Soporte</a></li>
                         </ul>
                     </nav>

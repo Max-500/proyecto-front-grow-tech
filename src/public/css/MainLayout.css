@@ -15,19 +15,19 @@
 
 .div-img-logo-shared {
     height: 100%;
-    width: 20%;
+    width: 15%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .img-logo-shared {
-    width: 40%;
+    width: 50%;
 }
 
 .div-nav-shared {
     height: 100%;
-    width: 80%;
+    width: 85%;
     background-color: #C6CED0;
 }
 
@@ -39,13 +39,12 @@
 .header-ul-shared {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     align-content: center;
     margin: 0;
-    flex-wrap: wrap;
     height: 100%;
-    padding-left: 0%;
+    width: 100%;
 }
 
 .header-ul-shared>li {
@@ -57,7 +56,7 @@
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    margin-right: 2%;
+    margin-right: 5%;
 }
 
 .img-perfil {
@@ -71,7 +70,7 @@
     flex-direction: row;
 }
 
-.div-aside-shared{
+.div-aside-shared {
     height: 100%;
     width: 15%;
     margin: 0;
@@ -81,22 +80,7 @@
     flex-direction: column;
 }
 
-.div-button-shared{
-    /*
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    height: 10%;
-    */
-    display: none;
-}
-
-.button-aside-shared{
-    background-color: transparent;
-    border: none;
-}
-
-.icons{
+.icons {
     height: 20px;
 }
 
@@ -120,7 +104,6 @@
     padding-left: 0;
     margin: 0;
     align-content: space-around;
-    /*flex-wrap: wrap;*/
 }
 
 .main-ul-shared>li {
@@ -152,72 +135,81 @@
     border-top-left-radius: 15px;
     position: relative;
     top: -2%;
-    background-color: white;
+    background-color: white
 }
 
-.header-ul-shared>.icons{
+.header-ul-shared>.icons {
     display: none;
 }
 
-.menu-hamburguesa-false{
+.menu-hamburguesa-false {
     display: none;
 }
 
-.menu-hamburguesa-true{
+.menu-hamburguesa-true {
     display: none;
 }
 
-.ul-hamburguesa{
-    margin: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    transform: translateY(0%);
-    transition: transform 0.3s;
-}
-
-.li-hamburguesa{
+.li-hamburguesa {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.a-hamburguesa{
+.a-hamburguesa {
     text-decoration: none;
     font-size: 15px;
 }
 
-a{
+a {
     color: #476268;
 }
 
-a:hover{
+a:hover {
     color: #40A798;
 }
 
-@media (max-width: 320px) {
+.icons-exception{
+    display: none;
+}
+
+@media (max-width: 480px) {
     /* Estilos para celulares pequeños */
-    .div-aside-shared{
+    .div-aside-shared {
         display: none;
     }
 
-    .main-shared{
+    .main-shared {
         width: 100%;
         position: static;
         border: none;
         height: 100%;
     }
 
-    .header-ul-shared>.icons{
+    .header-ul-shared>.icons {
         display: block;
+        margin-right: 3%;
     }
 
-    .header-ul-shared>div{
+    .header-ul-shared{
+        padding: 0;
+        width: 100%;
+    }
+
+    .header-ul-shared>.div-img-perfil {
         display: none;
     }
 
-    .menu-hamburguesa-false{
+    .header-ul-shared>.div-img-button{
+        /*height: 100%; */
+        width: 30%;
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+        
+    }
+
+    .menu-hamburguesa-false {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -230,10 +222,11 @@ a:hover{
         margin: 0;
         height: 100%;
         transform: translateX(110%);
-        transition: transform 0.5s ease;
+        transition: transform 0.5s ease-in-out;
+        height: 85%;
     }
 
-    .menu-hamburguesa-true{
+    .menu-hamburguesa-true {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -246,35 +239,42 @@ a:hover{
         margin: 0;
         height: 100%;
         transform: translateX(0);
-        transition: transform 0.5s;
+        transition: transform 0.5s ease-in-out;
         height: 85%;
     }
 
-    .ul-hamburguesa{
+    .ul-hamburguesa {
         list-style: none;
         padding: 0;
     }
 
-    .a-hamburguesa-exception{
+    .a-hamburguesa-exception {
         text-decoration: none;
         text-align: center;
         font-size: 15px;
     }
 
-    .header-shared{
+    .header-shared {
         position: fixed;
+    }
+
+    .icons-exception{
+        display: block;
+        padding-right: 10%;
+    }
+
+    .div-img-logo-shared {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 2%;
     }
 
 }
 
-@media (max-width: 767px) {
-    /* Estilos para celulares medianos */
-}
-
-@media (max-width: 991px) {
-    /* Estilos para tablets pequeñas en modo vertical */
-}
-
-@media (max-width: 1199px) {
-    /* Estilos para tablets pequeñas en modo horizontal */
-}
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Estilos para tablets en orientación vertical */
+  }
+  
