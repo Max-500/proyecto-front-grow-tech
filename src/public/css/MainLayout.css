@@ -123,7 +123,7 @@
     align-items: center;
     height: 100%;
     justify-content: center;
-  }
+}
 
 .tr-header-item:nth-child(3) {
     flex-basis: 40%;
@@ -131,11 +131,11 @@
 
 .tr-header-item:nth-child(1),
 .tr-header-item:nth-child(2) {
-  flex-basis: 0;
-  flex-grow: 1;
+    flex-basis: 0;
+    flex-grow: 1;
 }
 
-.tr-header>th{
+.tr-header>th {
     color: #476268;
     align-items: center;
     border-bottom: solid 2px #5E757B;
@@ -148,14 +148,14 @@
     flex-direction: column;
 }
 
-.tr-body{
+.tr-body {
     height: 25%;
     display: flex;
     width: 100%;
     border-bottom: solid 2px #75898D;
 }
 
-.tr-body-item{
+.tr-body-item {
     height: 100%;
     display: flex;
     align-items: center;
@@ -163,16 +163,16 @@
 }
 
 .tr-body-item:nth-child(1),
-.tr-body-item:nth-child(2){
+.tr-body-item:nth-child(2) {
     flex-basis: 0;
     flex-grow: 1;
 }
 
-.tr-body-item:nth-child(3){
+.tr-body-item:nth-child(3) {
     flex-basis: 40%;
 }
 
-.tabla-botones{
+.tabla-botones {
     height: 15%;
     display: none;
     flex-direction: row;
@@ -180,18 +180,18 @@
     justify-content: center;
 }
 
-.div-button-item{
+.div-button-item {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .div-button-item:nth-child(1),
-.div-button-item:nth-child(2){
+.div-button-item:nth-child(2) {
     flex-basis: 25%;
 }
 
-.button-item{
+.button-item {
     background-color: #86C7BE;
     border-radius: 20px;
     border: none;
@@ -199,15 +199,23 @@
     width: 30%;
 }
 
-.botones-paginado{
+.botones-paginado {
     border-radius: 50%;
     background-color: transparent;
     border: none;
 }
 
+.tabla-botones>div:first-child,
+.tabla-botones>div:last-child {
+    flex-basis: 30%;
+}
+
+.tabla-botones>div:nth-child(2) {
+    flex-grow: 1;
+}
+
 .temperatura-container {
     width: 100%;
-    background-color: blue;
     min-height: 45%;
 }
 
@@ -222,9 +230,10 @@
 
 .nav-child {
     height: 80vh;
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .nav-ul {
