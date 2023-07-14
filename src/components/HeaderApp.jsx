@@ -1,50 +1,48 @@
 import Logo from "../assets/Logo.svg"
-import ImgPerfil from "../assets/Imagen Perfil.svg"
-import { useState } from "react"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faHouse, faChartLine, faBook, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-const HeaderApp = () => {
+import { useContext } from "react"
+import { AppContext } from "../contexts/AppContext"
 
-    const [isOpen, setIsOpen] = useState(false)
+const HeaderApp = (props) => {
 
-    const handleClick = (e) => {
-        console.log(isOpen)
+    const { stateMenuBurger, newStateMenuBurger } = useContext(AppContext)
+
+    const elemento = props.referenciaAside;
+    const container = props.referenciaDiv;
+
+    const handleMouseEnter = (e) => {
         e.preventDefault();
-        if (isOpen === false) {
-            setIsOpen(true)
+        console.log(stateMenuBurger)
+        if (stateMenuBurger === false) {
+            newStateMenuBurger(true)
+            elemento.current.style.setProperty("transform", "translateX(0%)");
+            elemento.current.style.setProperty("transition", "transform 0.5s ease-in-out");
+            container.current.style.setProperty("opacity", "0.5")
+            container.current.style.setProperty("transition", "opacity 0.3s")
             return;
         }
-        setIsOpen(false)
+        newStateMenuBurger(false)
+        elemento.current.style.setProperty("transform", "translateX(100%)");
+        elemento.current.style.setProperty("transition", "transform 0.5s ease-in-out");
+        container.current.style.setProperty("opacity", "1")
+        container.current.style.setProperty("transition", "opacity 0.3s")
     }
 
     return (
         <>
-            <header className="header-shared">
-                <div className="div-img-logo-shared">
-                    <img className="img-logo-shared" src={Logo} alt="Logo Grow Tech" />
+            <header className="header">
+                <div className="div-img-logo">
+                    <img className="img-logo" src={Logo} alt="Logo Grow Tech" />
                 </div>
-                <div className="div-nav-shared">
-                    <nav className="header-nav-shared">
-                        <ul className="header-ul-shared">
-                            <div className="div-img-perfil">
-                                <img className="img-perfil" src={ImgPerfil} alt="Imagen De Perfil" />
-                            </div>
-                            <div className="div-img-button">
-                                <FontAwesomeIcon onClick={handleClick} className="icons-exception" icon={faBars} color="#40A798" />
-              
-                            </div>
-                        </ul>
-                    </nav>
-                </div>
+                <nav className="nav-header">
+                    <div className="div-img-perfil" onClick={handleMouseEnter} >
+                        <FontAwesomeIcon className="img-perfil" icon={faBars} color="#40A798" />
+                    </div>
+                </nav>
             </header>
-            <div className={`menu-hamburguesa-${isOpen}`}>
-                <li className="li-hamburguesa"><FontAwesomeIcon className="icons" icon={faHouse} color="#40A798" /><a className="a-hamburguesa" href="/home">Pagina Principal</a></li>
-                <li className="li-hamburguesa"><FontAwesomeIcon className="icons" icon={faChartLine} color="#40A798" /><a className="a-hamburguesa" href="#">Analisis de Datos</a></li>
-                <li className="li-hamburguesa"><div><FontAwesomeIcon className="icons" icon={faBook} color="#40A798" /></div><a className="a-hamburguesa-exception" href="#">Recomendaciones</a></li>
-                <li className="li-hamburguesa"><FontAwesomeIcon className="icons" icon={faPaperPlane} color="#40A798" /><a className="a-hamburguesa" href="#">Ayuda y Soporte</a></li>
-            </div>
         </>
     )
 }

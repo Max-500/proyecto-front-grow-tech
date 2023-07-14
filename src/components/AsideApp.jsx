@@ -5,18 +5,14 @@ const AsideApp = () => {
 
     return (
         <>
-            <div className='div-aside-shared'>
-                <aside className="aside-shared">
-                    <nav className="aside-nav-main-shared">
-                        <ul className="main-ul-shared">
-                            <li><FontAwesomeIcon className="icons" icon={faHouse} color="#40A798" /><a href="/home">Pagina Principal</a></li>
-                            <li><FontAwesomeIcon className="icons" icon={faChartLine} color="#40A798" /><a href="#">Analisis de Datos</a></li>
-                            <li><FontAwesomeIcon className="icons" icon={faBook} color="#40A798" /><a href="#">Recomendaciones</a></li>
-                            <li><FontAwesomeIcon className="icons" icon={faPaperPlane} color="#40A798" /><a href="#">Ayuda y Soporte</a></li>
-                        </ul>
-                    </nav>
-                </aside>
-            </div>
+            <nav className="nav-child" >
+                <ul className="nav-ul">
+                    <li className="nav-li"><FontAwesomeIcon className="icons" icon={faHouse} color="#476268" /><a className="nav-a" href="/home">Pagina Principal</a></li>
+                    <li className="nav-li"><FontAwesomeIcon className="icons" icon={faChartLine} color="#476268" /><a className="nav-a" href="#">Analisis de Datos</a></li>
+                    <li className="nav-li"><FontAwesomeIcon className="icons" icon={faBook} color="#476268" /><a href="#">Recomendaciones</a></li>
+                    <li className="nav-li"><FontAwesomeIcon className="icons" icon={faPaperPlane} color="#476268" /><a href="#">Ayuda y Soporte</a></li>
+                </ul>
+            </nav>
         </>
     )
 }

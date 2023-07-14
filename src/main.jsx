@@ -6,11 +6,14 @@ import { router } from "./Router.jsx"
 
 import "./public/css/Main.css"
 import UserState from './contexts/UserState.jsx'
+import AppState from './contexts/AppState.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <UserState>
-      <RouterProvider router={router}/>
+      <AppState>
+        <RouterProvider router={router}/>
+      </AppState>
     </UserState>
   </React.StrictMode>
 )

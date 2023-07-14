@@ -9,7 +9,7 @@ const GuestLayout = () => {
     if(token){
         return <Navigate to= "/" />
     }
-
+    
     return (
         <>
             <Outlet />
