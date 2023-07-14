@@ -12,7 +12,7 @@ const HeaderApp = (props) => {
 
     const elemento = props.referenciaAside;
     const container = props.referenciaDiv;
-
+    
     const handleMouseEnter = (e) => {
         e.preventDefault();
         console.log(stateMenuBurger)

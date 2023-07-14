@@ -1,7 +1,7 @@
 import PlantRow from "../components/PlantRow";
 import { useRef, useState, useEffect } from "react";
 
-const Table = (params) => {
+const Table = () => {
 
     const [plants, setPlants] = useState([])
     const [allPlants, setAllPlants] = useState([])

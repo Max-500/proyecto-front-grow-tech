@@ -4,14 +4,13 @@ import HeaderApp from "../components/HeaderApp"
 
 import "../public/css/MainLayout.css"
 import { AppContext } from "../contexts/AppContext";
-import TitleHome from "../components/TitleHome";
-import Table from "../components/Table";
-import Temperature from "../components/Temperature";
 
-const MainLayout = () => {
+const MainLayout = ({ title, table, temperatura }) => {
 
     const { newStateMenuBurger } = useContext(AppContext)
-
+    console.log(title);
+    console.log(table)
+    console.log(temperatura)
     const elemento = useRef(null)
     const container = useRef(null)
 
@@ -29,9 +28,9 @@ const MainLayout = () => {
                 <HeaderApp referenciaAside={elemento} referenciaDiv={container} />
                 <div className="container">
                     <div className="child" ref={container}>
-                        <TitleHome />
-                        <Table />
-                        <Temperature />
+                        { title }
+                        { table }
+                        { temperatura }
                     </div>
                     <aside className="child" ref={elemento} onMouseLeave={handleMouseLeave}>
                         <AsideApp />

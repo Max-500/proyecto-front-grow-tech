@@ -3,10 +3,15 @@ import { UserContext } from "./UserContext";
 
 // eslint-disable-next-line react/prop-types
 const UserState = ({ children }) => {
+    const [id, setId] = useState(null)
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [token, setToken] = useState(localStorage.getItem('authToken'))
+    const [token, setToken] = useState(localStorage.getItem("authToken"))
+
+    const newId = (value) => {
+        setId(value)
+    }
 
     const newUsername = (value) => {
         setUsername(value);
@@ -27,7 +32,7 @@ const UserState = ({ children }) => {
     return (
         <>
             <UserContext.Provider value={{
-                username, email, password, token, newUsername, newEmail, newPassword, newToken
+                id, username, email, password, token, newId, newUsername, newEmail, newPassword, newToken
             }}>
                 { children }
             </UserContext.Provider>

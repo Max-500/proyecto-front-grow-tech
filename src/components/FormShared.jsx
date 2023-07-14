@@ -8,11 +8,12 @@ import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const FormShared = ({ newAccount, inputEmail, boton }) => {
 
-    const { username, password, email, token, newUsername, newPassword, newToken } = useContext(UserContext)
+    const { id, username, password, email, token, newId, newUsername, newPassword, newToken } = useContext(UserContext)
 
     const navigate = useNavigate();
 
     const handleSubmit = async(e) => {
+        console.log(id)
         e.preventDefault();
         // eslint-disable-next-line react/prop-types
         let evento = boton.props.title;
@@ -35,9 +36,12 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
             username, 
             password
         }).then((res) => {
+            console.log(res)
             if(res.status === 200){
-                newToken(JSON.stringify(res.data.token))
                 localStorage.setItem('authToken', res.data.token)
+                newToken(JSON.stringify(res.data.token))
+                newId(1)
+                return;
             }
             alert("No se pudo loggear, intentalo mas tarde")
         })
