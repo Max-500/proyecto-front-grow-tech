@@ -1,8 +1,8 @@
-const TitleHome = () => {
+const TitleHome = ({ title }) => {
     return (
         <>
             <div className="titulo-container">
-                <h1>Resumen De Estado De Cultivos</h1>
+                <h1>{ title}</h1>
             </div>
         </>
     )

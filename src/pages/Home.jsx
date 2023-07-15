@@ -13,7 +13,7 @@ const Home = () => {
      
     return (
         <>
-            <MainLayout title={<TitleHome />} table={<Table />} temperatura={<Temperature />} />
+            <MainLayout title={<TitleHome title="Resumen De Estado De Cultivos"/>} table={<Table />} temperatura={<Temperature />} />
         </>
     )
 }

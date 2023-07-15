@@ -46,9 +46,7 @@ const Temperature = () => {
     return (
         <>
             <div className="temperatura-container">
-                <p>
-                    Aquí estara el tema de la tabla container
-                </p>
+                
             </div>
         </>
     )

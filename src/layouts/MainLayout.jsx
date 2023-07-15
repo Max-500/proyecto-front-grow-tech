@@ -1,11 +1,10 @@
 import { useContext, useRef } from "react";
 import AsideApp from "../components/AsideApp";
 import HeaderApp from "../components/HeaderApp"
-
-import "../public/css/MainLayout.css"
 import { AppContext } from "../contexts/AppContext";
+import "../public/css/MainLayout.css"
 
-const MainLayout = ({ title, table, temperatura }) => {
+const MainLayout = ({ title, table, temperatura, grafica, recomendations }) => {
 
     const { newStateMenuBurger } = useContext(AppContext)
     console.log(title);
@@ -28,9 +27,11 @@ const MainLayout = ({ title, table, temperatura }) => {
                 <HeaderApp referenciaAside={elemento} referenciaDiv={container} />
                 <div className="container">
                     <div className="child" ref={container}>
-                        { title }
-                        { table }
-                        { temperatura }
+                        {title}
+                        {table}
+                        {temperatura}
+                        {grafica}
+                        {recomendations}
                     </div>
                     <aside className="child" ref={elemento} onMouseLeave={handleMouseLeave}>
                         <AsideApp />
