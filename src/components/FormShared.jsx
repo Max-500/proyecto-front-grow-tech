@@ -4,6 +4,7 @@ import { UserContext } from "../contexts/UserContext";
 
 import axios from "../AxiosSetting/axios.js"
 import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 // eslint-disable-next-line react/prop-types
 const FormShared = ({ newAccount, inputEmail, boton }) => {
@@ -13,10 +14,10 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
     const navigate = useNavigate();
 
     const handleSubmit = async(e) => {
-        console.log(id)
         e.preventDefault();
         // eslint-disable-next-line react/prop-types
         let evento = boton.props.title;
+        localStorage.setItem('username', username);
         if(evento === "Registrar"){
             axios.post('/register/',{
                 username,
@@ -38,9 +39,11 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
         }).then((res) => {
             console.log(res)
             if(res.status === 200){
-                localStorage.setItem('authToken', res.data.token)
+                const cookies = new Cookies();
+                cookies.set('token', res.data.token, { path: '/' })
+                cookies.set('email', res.data.user.email, { path: '/' })
+                cookies.set('username', res.data.user.username, { path: '/' })
                 newToken(JSON.stringify(res.data.token))
-                newId(1)
                 return;
             }
             alert("No se pudo loggear, intentalo mas tarde")

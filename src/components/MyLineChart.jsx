@@ -1,43 +1,15 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
+
+
 const data = [
-  {
-    name: 'Día 1',
-    humedadAmbiente: 40,
-    temperaturaAmbiente: 20,
-    humedadSuelo: 30,
-    temperaturaSuelo: 18,
-  },
-  {
-    name: 'Día 2',
-    humedadAmbiente: 45,
-    temperaturaAmbiente: 22,
-    humedadSuelo: 35,
-    temperaturaSuelo: 20,
-  },
-  {
-    name: 'Día 3',
-    humedadAmbiente: 50,
-    temperaturaAmbiente: 24,
-    humedadSuelo: 40,
-    temperaturaSuelo: 22,
-  },
-  {
-    name: 'Día 4',
-    humedadAmbiente: 55,
-    temperaturaAmbiente: 26,
-    humedadSuelo: 45,
-    temperaturaSuelo: 24,
-  },
-  {
-    name: 'Día 5',
-    humedadAmbiente: 60,
-    temperaturaAmbiente: 28,
-    humedadSuelo: 50,
-    temperaturaSuelo: 26
-  }
-];
+  { dia: "2019-08-24T00:00:00.000", planta: "Noche Buena", valor: 1.5 },
+  { dia: "2019-08-25T00:00:00.000", planta: "Noche Buena", valor: 3.5 }, 
+  { dia: "2019-08-26T00:00:00.000", planta: "Noche Buena", valor: 5.5 }, 
+  { dia: "2019-08-27T00:00:00.000", planta: "Noche Buena", valor: 7.5 }, 
+  { dia: "2019-08-28T00:00:00.000", planta: "Noche Buena", valor: 9.5 }
+]
 
 const MyLineChart = () => (
   <>
@@ -52,14 +24,12 @@ const MyLineChart = () => (
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="dia" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="humedadAmbiente" stroke="#8884d8" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="temperaturaAmbiente" stroke="#82ca9d" />
-          <Line type="monotone" dataKey="humedadSuelo" stroke="#FF0000" activeDot={{ r: 8 }} />
-          <Line type="monotone" dataKey="temperaturaSuelo" stroke="#0000FF" />
+          <Line type="monotone" dataKey="valor" stroke="#8884d8" activeDot={{ r: 8 }} />
+
         </LineChart>
       </ResponsiveContainer>
     </div>

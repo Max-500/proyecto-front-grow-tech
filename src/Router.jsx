@@ -9,6 +9,8 @@ import GuestLayout from "./layouts/GuestLayout";
 import Home from "./pages/Home";
 import Analysis from "./pages/Analysis";
 import Recomendations from "./pages/Recomendations";
+import Help from "./pages/Help";
+import NewPlant from "./pages/NewPlant";
 
 export const router = createBrowserRouter([
     {
@@ -25,12 +27,20 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
+                path: "/new-plant",
+                element: <NewPlant />
+            },
+            {
                 path: "/analysis",
                 element: <Analysis />
             },
             {
                 path: "/recomendations",
                 element: <Recomendations />
+            },
+            {
+                path: "/help",
+                element: <Help />
             }
         ]
     }, 

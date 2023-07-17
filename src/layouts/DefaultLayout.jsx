@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { Outlet, Navigate } from "react-router-dom";
+import { Outlet, Navigate, useNavigation } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 
 const DefaultLayout = () => {
    
+    const navigator = useNavigation();
     const { token } = useContext(UserContext);
 
     if(!token){
@@ -12,6 +13,13 @@ const DefaultLayout = () => {
     
     return (
         <>
+            {
+                navigator.state === "loading" && (
+                    <p>
+                        Se esta cargando el componente
+                    </p>
+                )
+            }
             <Outlet />
         </>
     )

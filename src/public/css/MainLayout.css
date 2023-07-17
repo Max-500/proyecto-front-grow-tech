@@ -48,6 +48,9 @@
     flex-wrap: wrap;
 }
 
+.img-perfil{
+    cursor: pointer;
+}
 
 .container {
     display: flex;
@@ -204,6 +207,7 @@
     border-radius: 50%;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .tabla-botones>div:first-child,
