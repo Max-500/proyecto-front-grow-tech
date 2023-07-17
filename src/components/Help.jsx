@@ -5,7 +5,6 @@ import Cookies from "universal-cookie";
 
 const Help = () => {
 
-    const { username } = useContext(UserContext)
     const cookies = new Cookies();
 
     const [message, setMessage] = useState("")

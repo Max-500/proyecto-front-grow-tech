@@ -4,7 +4,7 @@ import HeaderApp from "../components/HeaderApp"
 import { AppContext } from "../contexts/AppContext";
 import "../public/css/MainLayout.css"
 
-const MainLayout = ({ title, table, temperatura, grafica, recomendations, help }) => {
+const MainLayout = ({ title, table, temperatura, grafica, recomendations, help, newPlant }) => {
 
     const { newStateMenuBurger } = useContext(AppContext)
 
@@ -31,6 +31,7 @@ const MainLayout = ({ title, table, temperatura, grafica, recomendations, help }
                         { grafica }
                         { recomendations }
                         { help }
+                        { newPlant }
                     </div>
                     <aside className="child" ref={elemento} onMouseLeave={handleMouseLeave}>
                         <AsideApp />
