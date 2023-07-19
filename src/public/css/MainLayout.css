@@ -61,6 +61,10 @@
     top: 20%;
 }
 
+button{
+    cursor: pointer;
+}
+
 .child {
     flex-basis: 0;
     flex-grow: 1;
@@ -68,7 +72,7 @@
 
 .child:nth-child(1) {
     min-width: 100%;
-    min-height: 85vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -221,7 +225,47 @@
 
 .temperatura-container {
     width: 100%;
-    min-height: 45%;
+    max-height: 35%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.temperatura-main{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    height: 100%;
+    width: 70%;
+    margin-left: 5%;
+}
+
+.img-temperatura{
+    height: 70%;
+}
+
+.temperatura-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.temperatura{
+    font-size: 50px;
+}
+
+.temperatura-text{
+    color: #40A798;
 }
 
 .child:nth-child(2) {

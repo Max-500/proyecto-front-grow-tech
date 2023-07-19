@@ -4,6 +4,7 @@ import HeaderApp from "../components/HeaderApp"
 import { AppContext } from "../contexts/AppContext";
 import "../public/css/MainLayout.css"
 
+
 const MainLayout = ({ title, table, temperatura, grafica, recomendations, help, newPlant }) => {
 
     const { newStateMenuBurger } = useContext(AppContext)

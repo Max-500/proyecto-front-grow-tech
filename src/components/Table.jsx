@@ -17,43 +17,43 @@ const Table = () => {
             {
                 planta: "Manzana 1",
                 humedad: "75°",
-                estado: "Optimo"
+                estado: true
             }, {
                 planta: "Manzana 2",
                 humedad: "75°",
-                estado: "Critico"
+                estado: false
             }, {
                 planta: "Manzana 3",
                 humedad: "75°",
-                estado: "Optimo"
+                estado: true
             }, {
                 planta: "Manzana 4",
                 humedad: "75°",
-                estado: "Optimo"
+                estado: false
             }, {
                 planta: "Manzana 5",
                 humedad: "75°",
-                estado: "Optimo"
+                estado: true
             }, {
                 planta: "Manzana 6",
                 humedad: "75°",
-                estado: "Optimo"
+                estado: false
             }, {
                 planta: "Manzana 7",
                 humedad: "75°",
-                estado: "Critico"
+                estado: true
             }, {
                 planta: "Manzana 8",
                 humedad: "75°",
-                estado: "Optimo"
+                estado: false
             }, {
                 planta: "Manzana 9",
                 humedad: "75°",
-                estado: "Optimo"
+                estado: true
             }, {
                 planta: "Manzana 10",
                 humedad: "75°",
-                estado: "Optimo"
+                estado: false
             },
         ]
         let nBotones = [];
@@ -124,7 +124,7 @@ const Table = () => {
                     </thead>
                     <tbody className="tabla-body">
                         {plants.map((plant) => (
-                            <PlantRow planta={plant.planta} humedad={plant.humedad} estado={plant.estado} />
+                            <PlantRow planta={plant.planta} humedad={plant.humedad} estado={plant.estado ? 'Optimo' : 'Critico' } />
                         ))}
                     </tbody>
                     <caption ref={paginado} className="tabla-botones">

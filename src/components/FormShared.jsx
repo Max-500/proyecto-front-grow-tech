@@ -17,7 +17,6 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
         e.preventDefault();
         // eslint-disable-next-line react/prop-types
         let evento = boton.props.title;
-        localStorage.setItem('username', username);
         if(evento === "Registrar"){
             axios.post('/register/',{
                 username,
@@ -37,12 +36,13 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
             username, 
             password
         }).then((res) => {
-            console.log(res)
             if(res.status === 200){
                 const cookies = new Cookies();
+                console.log(res.data.token)
                 cookies.set('token', res.data.token, { path: '/' })
                 cookies.set('email', res.data.user.email, { path: '/' })
                 cookies.set('username', res.data.user.username, { path: '/' })
+                cookies.set('user_id', res.data.user_id, { path: '/' })
                 newToken(JSON.stringify(res.data.token))
                 return;
             }

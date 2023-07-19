@@ -1,55 +1,65 @@
-import React from 'react';
-/*
-const images = {
-  cold: 'https://example.com/cold.jpg',
-  warm: 'https://example.com/warm.jpg',
-  hot: 'https://example.com/hot.jpg'
-};
+import React, { useEffect, useState } from 'react';
+import axios from "../AxiosSetting/axios"
+import Cookies from 'universal-cookie';
 
-const Temperature = ({ temperature }) => {
-  let image;
-  if (temperature < 10) {
-    image = images.cold;
-  } else if (temperature >= 10 && temperature < 25) {
-    image = images.warm;
-  } else {
-    image = images.hot;
-  }
-
-  return (
-    <div
-      style={{
-        backgroundImage: `url(${image})`,
-        backgroundSize: 'cover',
-        width: '100%',
-        height: '100%'
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: 'rgba(255, 255, 255, 0.5)',
-          padding: '1rem',
-          borderRadius: '1rem',
-          maxWidth: '20rem',
-          margin: '0 auto'
-        }}
-      >
-        <h2>Temperatura</h2>
-        <p>{temperature}°C</p>
-      </div>
-    </div>
-  );
-};
-*/
+import Lluvia from "../assets/Lluvioso.png"
+import Nublado from "../assets/Nublado.png"
+import Soleado from "../assets/Soleado.jpg"
+import Vientoso from "../assets/Vientoso.png"
 
 const Temperature = () => {
-    return (
-        <>
-            <div className="temperatura-container">
-                
-            </div>
-        </>
-    )
+
+  const [image, setImage] = useState("")
+  const [text, setText] = useState("")
+  const [temperatura, setTemperatura] = useState(0)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        let res = await axios.get('/temperatura/temperaturas/ultimo-dato/');
+        const valorPredeterminado = 22;
+        const valor = res.data[0]['valor'] ?? valorPredeterminado;
+        console.log(res.data[0]['valor']);
+        setTemperatura(valor)
+        setText(valor)
+        console.log(temperatura)
+        if (temperatura > 25) {
+          setImage(Soleado);
+          setText("Soleado")
+        } else if (temperatura >= 20 && temperatura <= 25) {
+          setImage(Nublado);
+          setText("Nublado")
+        } else if (temperatura >= 15 && temperatura < 20) {
+          setImage(Lluvia);
+          setText("LLluvioso")
+        } else if (temperatura < 15) {
+          setImage(Vientoso);
+          setText("Vientoso")
+        }
+      } catch (err) {
+        alert("Algo sucedio mal")
+        const cookies = new Cookies();
+        cookies.remove('token')
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
+  return (
+    <>
+      <div className="temperatura-container">
+        <div className="temperatura-main">
+          <p className="temperatura-text"><b>Estado del día: {text}</b></p>
+          <div className="temperatura-img">
+            <img className="img-temperatura" src={image} alt="Clima actual" />
+            <p className="temperatura">{text}</p>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default Temperature;
