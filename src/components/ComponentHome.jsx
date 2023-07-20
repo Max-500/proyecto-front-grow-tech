@@ -2,41 +2,35 @@ import { useState } from "react";
 
 const ComponentHome = () => {
 
-    const home = <p className="p-principal">Lorem ipsum DE HOME dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
-        orci eu porta, nam habitasse quis nullam lacinia parturient sed. Mus tincidunt mattis molestie euismod egestas,
-        nascetur dictumst vitae magna rhoncus nullam, turpis morbi eleifend nulla. Quisque aptent quam enim donec
-        parturient nascetur primis varius, laoreet class dictumst penatibus metus massa potenti faucibus, eros iaculis
-        venenatis netus cras praesent interdum.
+    const home = <p className="p-principal">Grow Tech es una pequeña empresa dedicada al desarrollo y fabricación de productos para el monitoreo
+    y cuidado de plantas domésticas. Nuestra misión es proporcionar soluciones innovadoras y tecnológicas que permitan a los amantes de las 
+    plantas tener un mayor control y comprensión de las necesidades de sus vegetales.
+    Nuestro producto principal es un dispositivo de monitoreo inteligente y fácil de usar que se conecta a las macetas o tiestos de las plantas. A través de sensores avanzados, nuestro dispositivo es capaz de medir y registrar datos importantes para el crecimiento saludable de las plantas, como la temperatura, humedad del suelo, humedad del ambiente y la intensidad de la luz.
+    Los datos recopilados por el dispositivo son enviados a una aplicación móvil intuitiva y amigable, donde los usuarios pueden ver y analizar 
+    la información en tiempo real. Además, la aplicación ofrece recomendaciones y consejos personalizados para el cuidado de cada tipo de 
+    planta, basados en su especie y las condiciones ambientales específicas.
+    </p>
 
-        Vitae suspendisse est pellentesque curae convallis tristique, habitasse suscipit himenaeos varius molestie,
-        porta pulvinar ultricies magnis ac. Pretium semper bibendum elementum et sodales ut vivamus, ornare dis nulla
-        duis senectus malesuada, morbi odio habitant orci erat faucibus. Vestibulum montes sociosqu primis eros gravida
-        proin penatibus nullam, sem condimentum bibendum mattis semper ornare fermentum neque interdum, cum auctor
-        habitant suspendisse nisl suscipit nam.</p>
+    const aboutUs = <p className="p-principal">En Grow Tech, creemos que las plantas tienen el poder de transformar los espacios y mejorar la 
+    calidad de vida de las personas. Nuestro propósito es acercar la tecnología a la naturaleza, para que puedas disfrutar de la experiencia de 
+    cultivar tus plantas de manera sencilla y gratificante. Queremos ayudarte a crear espacios verdes en tu hogar, donde puedas relajarte, 
+    conectarte con la naturaleza y cultivar un ambiente saludable.
+    Nuestra visión es ser líderes en el mercado del cuidado de plantas domésticas, reconocidos por la calidad y confiabilidad de nuestros 
+    productos. Queremos ser un referente en la industria, aportando innovación y excelencia en cada aspecto de nuestro trabajo. Aspiramos a 
+    inspirar a más personas a cultivar sus propias plantas, cultivar un estilo de vida más verde y crear un impacto positivo en el mundo.
+    </p>
 
-    const aboutUs = <p className="p-principal">Lorem ipsum DE ABOUT US dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
-        orci eu porta, nam habitasse quis nullam lacinia parturient sed. Mus tincidunt mattis molestie euismod egestas,
-        nascetur dictumst vitae magna rhoncus nullam, turpis morbi eleifend nulla. Quisque aptent quam enim donec
-        parturient nascetur primis varius, laoreet class dictumst penatibus metus massa potenti faucibus, eros iaculis
-        venenatis netus cras praesent interdum.
-
-        Vitae suspendisse est pellentesque curae convallis tristique, habitasse suscipit himenaeos varius molestie,
-        porta pulvinar ultricies magnis ac. Pretium semper bibendum elementum et sodales ut vivamus, ornare dis nulla
-        duis senectus malesuada, morbi odio habitant orci erat faucibus. Vestibulum montes sociosqu primis eros gravida
-        proin penatibus nullam, sem condimentum bibendum mattis semper ornare fermentum neque interdum, cum auctor
-        habitant suspendisse nisl suscipit nam.</p>
-
-    const contactUs = <p className="p-principal">Lorem ipsum DE CONTACT US dolor sit amet consectetur adipiscing elit commodo, fringilla pharetra ante pretium convallis
-        orci eu porta, nam habitasse quis nullam lacinia parturient sed. Mus tincidunt mattis molestie euismod egestas,
-        nascetur dictumst vitae magna rhoncus nullam, turpis morbi eleifend nulla. Quisque aptent quam enim donec
-        parturient nascetur primis varius, laoreet class dictumst penatibus metus massa potenti faucibus, eros iaculis
-        venenatis netus cras praesent interdum.
-
-        Vitae suspendisse est pellentesque curae convallis tristique, habitasse suscipit himenaeos varius molestie,
-        porta pulvinar ultricies magnis ac. Pretium semper bibendum elementum et sodales ut vivamus, ornare dis nulla
-        duis senectus malesuada, morbi odio habitant orci erat faucibus. Vestibulum montes sociosqu primis eros gravida
-        proin penatibus nullam, sem condimentum bibendum mattis semper ornare fermentum neque interdum, cum auctor
-        habitant suspendisse nisl suscipit nam.</p>
+    const contactUs = <p className="p-principal">
+        Si tienes alguna pregunta, comentario o simplemente deseas obtener más información sobre nuestros productos y servicios, no dudes en 
+        ponerte en contacto con nosotros. En Grow Tech, valoramos la comunicación con nuestros clientes y estamos aquí para ayudarte en todo lo 
+        que necesites.
+        Puedes contactarnos a través de los siguientes medios:
+        Correo Electrónico: info@growtech.com
+        Teléfono: +52 (961) 452-0080
+        Nuestro equipo de atención al cliente estará encantado de atenderte y brindarte asistencia personalizada. Si tienes alguna consulta sobre
+         nuestros dispositivos de monitoreo, consejos para el cuidado de tus plantas o cualquier otra inquietud relacionada, no dudes en 
+         comunicarte con nosotros.
+    </p>
 
     const [linkText, setLinkText] = useState(home)
 
@@ -62,7 +56,7 @@ const ComponentHome = () => {
                 <li className="li-principal"><a onClick={handleLinkClickAboutUs} className="a-principal">Sobre Nosotros</a></li>
                 <li className="li-principal"><a onClick={handleLinkClickContactUs} className="a-principal">Contáctenos</a></li>
             </ul>
-                {linkText}
+            {linkText}
         </>
     )
 }

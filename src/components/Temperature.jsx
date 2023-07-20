@@ -19,10 +19,8 @@ const Temperature = () => {
         let res = await axios.get('/temperatura/temperaturas/ultimo-dato/');
         const valorPredeterminado = 22;
         const valor = res.data[0]['valor'] ?? valorPredeterminado;
-        console.log(res.data[0]['valor']);
         setTemperatura(valor)
         setText(valor)
-        console.log(temperatura)
         if (temperatura > 25) {
           setImage(Soleado);
           setText("Soleado")

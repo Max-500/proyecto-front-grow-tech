@@ -1,39 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Cookies from 'universal-cookie';
+import axios from "../AxiosSetting/axios.js"
+import { showAlert } from '../SweetAlerts/SweetAlerts';
 
+const MyLineChart = () => {
 
+  const [data, setData] = useState([])
+  const cookies = new Cookies()
 
-const data = [
-  { dia: "2019-08-24T00:00:00.000", planta: "Noche Buena", valor: 1.5 },
-  { dia: "2019-08-25T00:00:00.000", planta: "Noche Buena", valor: 3.5 }, 
-  { dia: "2019-08-26T00:00:00.000", planta: "Noche Buena", valor: 5.5 }, 
-  { dia: "2019-08-27T00:00:00.000", planta: "Noche Buena", valor: 7.5 }, 
-  { dia: "2019-08-28T00:00:00.000", planta: "Noche Buena", valor: 9.5 }
-]
+  const usuario_id = cookies.get('user_id')
+  const planta_id = cookies.get('plant_id')
 
-const MyLineChart = () => (
-  <>
-    <div className="grafica-1">
-      <ResponsiveContainer>
-        <LineChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5, right: 30, left: 20, bottom: 5
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="dia" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line type="monotone" dataKey="valor" stroke="#8884d8" activeDot={{ r: 8 }} />
+  useEffect(() => {
+    axios.post(`/plants/obtener-datos-promedio/`, {
+      usuario_id, planta_id
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          const dataPlants = res.data;
+          const sortedData = dataPlants.slice().sort((a, b) => new Date(a.dia) - new Date(b.dia));
+          setData(sortedData)
+          return;
+        }
+        showAlert('¡Error!', 'Verifica tu conexion a internet', 'error');
+        cookies.remove('token')
+      })
+      .catch((err) => {
+        showAlert('¡Error!', 'Verifica tu conexion a internet', 'error');
+        cookies.remove('token')
+      })
+  }, [])
 
-        </LineChart>
-      </ResponsiveContainer>
-    </div>
-  </>
-);
+  return (
+    <>
+      <div className="grafica-1">
+        <ResponsiveContainer>
+          <LineChart
+            width={500}
+            height={300}
+            data={data}
+            margin={{
+              top: 5, right: 30, left: 20, bottom: 5
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="dia" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line type="monotone" dataKey="valor" stroke="#8884d8" activeDot={{ r: 8 }} />
+
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </>
+  )
+};
 
 export default MyLineChart;

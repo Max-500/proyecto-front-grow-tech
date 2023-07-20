@@ -22,7 +22,6 @@ const NewPlant = () => {
         const humedad = 0;
         const status = true;
         const usuario_id = cookies.get('user_id')
-        console.log(cookies.get('token'))
         axios.post('/plants/create/', {
             nombre, nombreU, humedad, status, usuario_id
         }).then((res) => {

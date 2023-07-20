@@ -1,73 +1,49 @@
+import Cookies from "universal-cookie";
 import PlantRow from "../components/PlantRow";
 import { useRef, useState, useEffect } from "react";
+import axios from "../AxiosSetting/axios"
+import { showAlert } from "../SweetAlerts/SweetAlerts";
+import { useNavigate } from "react-router-dom";
 
 const Table = () => {
 
     const [plants, setPlants] = useState([])
     const [allPlants, setAllPlants] = useState([])
+    const [originalPlants, setOriginalPlants] = useState([])
     const [nButton, setNButton] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
 
+    const cookies = new Cookies()
+    const navigate = useNavigate()
+
+    const userId = cookies.get('user_id')
+    
     const paginado = useRef(null);
     const previousButton = useRef(null);
     const nextButton = useRef(null);
 
     useEffect(() => {
-        const arr = [
-            {
-                planta: "Manzana 1",
-                humedad: "75°",
-                estado: true
-            }, {
-                planta: "Manzana 2",
-                humedad: "75°",
-                estado: false
-            }, {
-                planta: "Manzana 3",
-                humedad: "75°",
-                estado: true
-            }, {
-                planta: "Manzana 4",
-                humedad: "75°",
-                estado: false
-            }, {
-                planta: "Manzana 5",
-                humedad: "75°",
-                estado: true
-            }, {
-                planta: "Manzana 6",
-                humedad: "75°",
-                estado: false
-            }, {
-                planta: "Manzana 7",
-                humedad: "75°",
-                estado: true
-            }, {
-                planta: "Manzana 8",
-                humedad: "75°",
-                estado: false
-            }, {
-                planta: "Manzana 9",
-                humedad: "75°",
-                estado: true
-            }, {
-                planta: "Manzana 10",
-                humedad: "75°",
-                estado: false
-            },
-        ]
-        let nBotones = [];
-
-        for (let i = 1; i <= Math.ceil(arr.length / 4); i++)
-            nBotones.push(i)
-        setNButton(nBotones)
-        let buttons = Math.ceil(arr.length / 4);
-        if (arr.length > 4) {
-            paginado.current.style.setProperty("display", "flex")
-            previousButton.current.style.setProperty("display", "none")
-        }
-        setPlants(arr.slice(0, 4))
-        setAllPlants(arr)
+        axios.get(`/plants/listar/plantas/${userId}/`)
+            .then((res) => {
+                let arr = res.data
+                const modifiedArr = arr.map((element, index) => {
+                    return { ...element, id: index + 1 };
+                })
+                let nBotones = [];
+                for (let i = 1; i <= Math.ceil(arr.length / 4); i++)
+                    nBotones.push(i)
+                setNButton(nBotones)
+                if (arr.length > 4) {
+                    paginado.current.style.setProperty("display", "flex")
+                    previousButton.current.style.setProperty("display", "none")
+                }
+                setOriginalPlants(res.data)
+                setPlants(modifiedArr.slice(0, 4))
+                setAllPlants(modifiedArr)
+            })
+            .catch((err) => {
+                showAlert('¡Error!', 'Verifica tu conexion a internet', 'error');
+            })
     }, [])
 
     const handleClickNextPage = () => {
@@ -111,12 +87,18 @@ const Table = () => {
         setCurrentPage(actualPage)
     }
 
+    const plantSelect = (id) => {
+        cookies.set('plant_id', originalPlants[id-1]['id'])
+        navigate('/analysis')
+    }
+
     return (
         <>
             <div className="tabla-container">
                 <table className="tabla">
                     <thead className="tabla-header">
                         <tr className="tr-header">
+                            <th className="tr-header-item">Numero</th>
                             <th className="tr-header-item">TIPO DE CULTIVO</th>
                             <th className="tr-header-item">HUMEDAD</th>
                             <th className="tr-header-item">ESTATUS</th>
@@ -124,7 +106,7 @@ const Table = () => {
                     </thead>
                     <tbody className="tabla-body">
                         {plants.map((plant) => (
-                            <PlantRow planta={plant.planta} humedad={plant.humedad} estado={plant.estado ? 'Optimo' : 'Critico' } />
+                            <PlantRow id={plant.id} planta={plant.nombre} humedad={plant.humedad} estado={plant.status ? 'Optimo' : 'Critico'} onClick={plantSelect} />
                         ))}
                     </tbody>
                     <caption ref={paginado} className="tabla-botones">

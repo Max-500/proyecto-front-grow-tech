@@ -15,7 +15,6 @@ const HeaderApp = (props) => {
     
     const handleMouseEnter = (e) => {
         e.preventDefault();
-        console.log(stateMenuBurger)
         if (stateMenuBurger === false) {
             newStateMenuBurger(true)
             elemento.current.style.setProperty("transform", "translateX(0%)");

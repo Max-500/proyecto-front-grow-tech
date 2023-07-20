@@ -14,27 +14,25 @@ const Advices = () => {
                             <img src={Consejo1} alt="Primer Consejo" />
                         </div>
                         <div className="texto-consejo">
-                            <h2>Lorem ipsum dolor sit amet consectetur, adipiscing elit enim dictum.</h2>
+                            <h2>Regar Adecuadamente: </h2>
                             <br />
                             <p>
-                                Quis nam tempus per luctus molestie sollicitudin quam, lectus etiam volutpat odio accumsan enim venenatis consequat, blandit mus ligula pellentesque ridiculus congue.
-                                Magnis ad tempor tincidunt aliquam eget senectus nibh auctor curae, mi vehicula mollis dignissim nam nulla bibendum duis torquent, facilisis ligula ut malesuada fames suscipit phasellus penatibus.
+                                Asegúrate de entender las necesidades de agua de cada planta. Algunas requieren riego frecuente, mientras que 
+                                otras prefieren mantener el suelo más seco. Evita el exceso de riego, ya que puede llevar al encharcamiento y 
+                                dañar las raíces.
                             </p>
-                            <br />
-                            <p>Segundo parrafo</p>
                         </div>
                     </div>
 
                     <div className="consejo">
                         <div className="texto-consejo">
-                            <h2>Lorem ipsum dolor sit amet consectetur, adipiscing elit enim dictum.</h2>
+                            <h2>Ubicación y luz:</h2>
                             <br />
                             <p>
-                                Quis nam tempus per luctus molestie sollicitudin quam, lectus etiam volutpat odio accumsan enim venenatis consequat, blandit mus ligula pellentesque ridiculus congue.
-                                Magnis ad tempor tincidunt aliquam eget senectus nibh auctor curae, mi vehicula mollis dignissim nam nulla bibendum duis torquent, facilisis ligula ut malesuada fames suscipit phasellus penatibus.
+                            Coloca tus plantas en lugares adecuados según sus necesidades de luz. Algunas plantas prefieren luz directa, mientras
+                             que otras se desarrollan mejor en áreas sombreadas. Observa cómo reaccionan tus plantas a la luz y ajústalas en 
+                             consecuencia.
                             </p>
-                            <br />
-                            <p>Segundo parrafo</p>
                         </div>
                         <div className="imagen-consejo">
                             <img src={Consejo2} alt="Primer Consejo" />
@@ -46,27 +44,23 @@ const Advices = () => {
                             <img src={Consejo3} alt="Primer Consejo" />
                         </div>
                         <div className="texto-consejo">
-                            <h2>Lorem ipsum dolor sit amet consectetur, adipiscing elit enim dictum.</h2>
+                            <h2>Podar y eliminar hojas muertas: </h2>
                             <br />
                             <p>
-                                Quis nam tempus per luctus molestie sollicitudin quam, lectus etiam volutpat odio accumsan enim venenatis consequat, blandit mus ligula pellentesque ridiculus congue.
-                                Magnis ad tempor tincidunt aliquam eget senectus nibh auctor curae, mi vehicula mollis dignissim nam nulla bibendum duis torquent, facilisis ligula ut malesuada fames suscipit phasellus penatibus.
+                                Mantén tus plantas limpias y saludables al podar las partes muertas o enfermas. Esto estimula el crecimiento y 
+                                evita que las enfermedades se propaguen.
                             </p>
-                            <br />
-                            <p>Segundo parrafo</p>
                         </div>
                     </div>
 
                     <div className="consejo">
                         <div className="texto-consejo">
-                            <h2>Lorem ipsum dolor sit amet consectetur, adipiscing elit enim dictum.</h2>
+                            <h2>Fertilizar de forma adecuada: </h2>
                             <br />
                             <p>
-                                Quis nam tempus per luctus molestie sollicitudin quam, lectus etiam volutpat odio accumsan enim venenatis consequat, blandit mus ligula pellentesque ridiculus congue.
-                                Magnis ad tempor tincidunt aliquam eget senectus nibh auctor curae, mi vehicula mollis dignissim nam nulla bibendum duis torquent, facilisis ligula ut malesuada fames suscipit phasellus penatibus.
+                                Proporciona nutrientes adicionales a tus plantas mediante fertilizantes. Utiliza fertilizantes adecuados para 
+                                cada tipo de planta y sigue las indicaciones de aplicación para evitar sobrefertilización.
                             </p>
-                            <br />
-                            <p>Segundo parrafo</p>
                         </div>
                         <div className="imagen-consejo">
                             <img src={Consejo4} alt="Primer Consejo" />
@@ -74,13 +68,17 @@ const Advices = () => {
                     </div>
 
                     <div className="ultimo-consejo">
-                        <h2>Mus ligula mattis fringilla tellus, auctor habitant vel.</h2>
+                        <h2>Investiga sobre tus plantas: </h2>
                         <br />
                         <p>
-                            Aliquet volutpat magnis pretium urna pulvinar massa eu congue blandit nec, penatibus natoque habitasse fusce ullamcorper cursus mi sagittis leo purus faucibus, maecenas curabitur posuere mus venenatis fringilla cras rutrum ridiculus.
-                            Nam condimentum ullamcorper nisi pulvinar volutpat, suscipit gravida hac ad enim purus, sodales et himenaeos faucibus.
-                            Suscipit felis dictum ultrices sed eu quam dictumst metus leo, tortor donec habitant sodales curabitur id placerat est, nascetur tempor tristique condimentum imperdiet facilisis cum aliquet.
-                            Dictumst netus dis iaculis sollicitudin viverra porta justo morbi sem eget, a laoreet facilisi velit nibh blandit platea id nec.
+                        Aprende sobre las especies de plantas que tienes en casa. Conoce sus necesidades específicas, su ciclo de crecimiento y
+                        sus cuidados especiales. Cuanto más sepas sobre tus plantas, mejor podrás cuidarlas y disfrutar de su belleza.
+                        </p>
+                        <br />
+                        <p>
+                        Recuerda que cada planta es única y requiere atención personalizada. Con un poco de cuidado y amor, tus plantas 
+                        prosperarán y te llenarán de alegría con su esplendor natural. ¡Disfruta de tu jardín en casa y conecta con la 
+                        naturaleza!
                         </p>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ const Help = () => {
             username
         }).then((res) => {
             if (res.status === 200) {
-                showAlert('¡Correo Enviado!' ,'La ayuda llegara pront :)', 'info')
+                showAlert('¡Correo Enviado!' ,'La ayuda llegara pronto :)', 'info')
                 navigate("/home")
                 return;
             }

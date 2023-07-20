@@ -48,7 +48,7 @@
     flex-wrap: wrap;
 }
 
-.img-perfil{
+.img-perfil {
     cursor: pointer;
 }
 
@@ -61,7 +61,7 @@
     top: 20%;
 }
 
-button{
+button {
     cursor: pointer;
 }
 
@@ -133,14 +133,17 @@ button{
     justify-content: center;
 }
 
-.tr-header-item:nth-child(3) {
-    flex-basis: 40%;
+.tr-header-item {
+    flex: 1;
+    /* Cambiamos flex-grow: 1 por flex: 1 */
+    text-align: center;
+    /* Añadimos este estilo para centrar el contenido */
 }
 
-.tr-header-item:nth-child(1),
-.tr-header-item:nth-child(2) {
-    flex-basis: 0;
-    flex-grow: 1;
+/* Estilo para el primer hijo */
+.tr-header-item:first-child {
+    flex: 0 0 10%;
+    /* Aquí usamos flex: 0 0 10% para que el primer hijo use el 10% del espacio disponible */
 }
 
 .tr-header>th {
@@ -161,23 +164,18 @@ button{
     display: flex;
     width: 100%;
     border-bottom: solid 2px #75898D;
+    align-items: center;
 }
 
 .tr-body-item {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 1;
+    /* Cambiamos flex-grow: 1 por flex: 1 */
+    text-align: center;
+    /* Añadimos este estilo para centrar el contenido */
 }
 
-.tr-body-item:nth-child(1),
-.tr-body-item:nth-child(2) {
-    flex-basis: 0;
-    flex-grow: 1;
-}
-
-.tr-body-item:nth-child(3) {
-    flex-basis: 40%;
+.tr-body-item:first-child {
+    flex: 0 0 10%;
 }
 
 .tabla-botones {
@@ -234,7 +232,7 @@ button{
     align-content: flex-start;
 }
 
-.temperatura-main{
+.temperatura-main {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -246,11 +244,11 @@ button{
     margin-left: 5%;
 }
 
-.img-temperatura{
+.img-temperatura {
     height: 70%;
 }
 
-.temperatura-img{
+.temperatura-img {
     width: 100%;
     height: 100%;
     display: flex;
@@ -260,11 +258,11 @@ button{
 
 }
 
-.temperatura{
+.temperatura {
     font-size: 50px;
 }
 
-.temperatura-text{
+.temperatura-text {
     color: #40A798;
 }
 
@@ -313,7 +311,7 @@ button{
 /*
     Aqui inicia el css para la vista de las graficas
 */
-.grafica-1{
+.grafica-1 {
     width: 50%;
     height: 70%;
 }
