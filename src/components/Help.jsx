@@ -11,10 +11,6 @@ const Help = () => {
     const cookies = new Cookies();
     const navigate = useNavigate()
 
-    const handleChangeMessage = (e) => {
-        setMessage(e.target.value)
-    }
-
     const handleSendEmail = () => {
         const username = cookies.get('username')
         axios.post('/email-sender/', {
@@ -42,7 +38,7 @@ const Help = () => {
                 <div className="help-main">
                     <p className="help-text">Por favor danos una descripción del problema</p>
                     <div className="help-textarea">
-                        <textarea onChange={handleChangeMessage} className="textarea" id="" cols="30" rows="20"></textarea>
+                        <textarea className="textarea" id="" cols="30" rows="20"></textarea>
                         <button onClick={handleSendEmail} className="help-button">Enviar</button>
                     </div>
                 </div>

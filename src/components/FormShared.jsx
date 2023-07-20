@@ -39,7 +39,6 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
         }).then((res) => {
             if(res.status === 200){
                 const cookies = new Cookies();
-                console.log(res.data.token)
                 cookies.set('token', res.data.token, { path: '/' })
                 cookies.set('email', res.data.user.email, { path: '/' })
                 cookies.set('username', res.data.user.username, { path: '/' })

@@ -18,12 +18,11 @@ const NewPlant = () => {
 
     const handleNewPlant = () => {
         const nombre = plant
-        const nombreU = cookies.get('username')
         const humedad = 0;
         const status = true;
-        const usuario_id = cookies.get('user_id')
+        const usuario = cookies.get('user_id')
         axios.post('/plants/create/', {
-            nombre, nombreU, humedad, status, usuario_id
+            nombre, humedad, status, usuario
         }).then((res) => {
             if (res.status === 201) {
                 showAlert('¡Felicidades!' ,'Te ayudaremos a cuidarla :3', 'success')

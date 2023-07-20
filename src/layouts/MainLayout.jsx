@@ -26,13 +26,13 @@ const MainLayout = ({ title, table, temperatura, grafica, recomendations, help, 
                 <HeaderApp referenciaAside={elemento} referenciaDiv={container} />
                 <div className="container">
                     <div className="child" ref={container}>
-                        { title }
-                        { table }
-                        { temperatura }
-                        { grafica }
-                        { recomendations }
-                        { help }
-                        { newPlant }
+                        {title}
+                        {table}
+                        {temperatura}
+                        {grafica}
+                        {recomendations}
+                        {help}
+                        {newPlant}
                     </div>
                     <aside className="child" ref={elemento} onMouseLeave={handleMouseLeave}>
                         <AsideApp />

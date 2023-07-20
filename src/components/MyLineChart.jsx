@@ -12,6 +12,11 @@ const MyLineChart = () => {
   const usuario_id = cookies.get('user_id')
   const planta_id = cookies.get('plant_id')
 
+  const humedad_suelo = cookies.get('humedad_suelo')
+  const intensidad_luz = cookies.get('intensidad_luz')
+  const temperatura = cookies.get('temperatura')
+  const humedad_ambiente = cookies.get('humedad_ambiente')
+
   useEffect(() => {
     axios.post(`/plants/obtener-datos-promedio/`, {
       usuario_id, planta_id
@@ -53,6 +58,13 @@ const MyLineChart = () => {
 
           </LineChart>
         </ResponsiveContainer>
+          <a href={humedad_suelo}>Reporte Semanal: Humedad Del Suelo</a>
+          <br />
+          <a href={intensidad_luz}>Reporte Semanal: Intensidad De La Luz</a>
+          <br />
+          <a href={temperatura}>Reporte Semanal: Temperatura</a>
+          <br />
+          <a href={humedad_ambiente}>Reporte Semanal: Humadad Del Ambiente</a>
       </div>
     </>
   )

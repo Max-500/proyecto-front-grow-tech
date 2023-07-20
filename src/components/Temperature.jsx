@@ -35,7 +35,6 @@ const Temperature = () => {
           setText("Vientoso")
         }
       } catch (err) {
-        alert("Algo sucedio mal")
         const cookies = new Cookies();
         cookies.remove('token')
       }

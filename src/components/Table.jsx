@@ -88,9 +88,33 @@ const Table = () => {
     }
 
     const plantSelect = (id) => {
+        let planta_id = originalPlants[id-1]['id']
         cookies.set('plant_id', originalPlants[id-1]['id'])
+        fetchData(planta_id)
         navigate('/analysis')
     }
+
+    const fetchData = async (planta_id) => {
+        try {
+          const response1 = await axios.post('/generar/reporte/semanal/Humedad/suelo/', { planta_id });
+          cookies.set('humedad_suelo', response1.data.url_reporte)
+          //alert(response1.data.url_reporte)
+    
+          const response2 = await axios.post('/generar/reporte/semanal/intensidad/', { planta_id });
+            cookies.set('intensidad_luz', response2.data.url_reporte)
+            //alert(response2.data.url_reporte)
+
+          const response3 = await axios.post('/generar/reporte/semanal/temperatura/', { planta_id });
+          cookies.set('temperatura', response3.data.url_reporte)
+          //alert(response3.data.url_reporte)
+    
+          const response4 = await axios.post('/generar/reporte/semanal/Humedad/ambiente/', { planta_id });
+          cookies.set('humedad_ambiente', response4.data.url_reporte)
+          //alert(response4.data.url_reporte)
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
 
     return (
         <>
