@@ -3,6 +3,7 @@ import "../public/css/NewPlant.css"
 import Cookies from "universal-cookie"
 import axios from "../AxiosSetting/axios"
 import { useNavigate } from "react-router-dom"
+import { showAlert } from "../SweetAlerts/SweetAlerts"
 
 const NewPlant = () => {
 
@@ -26,13 +27,13 @@ const NewPlant = () => {
             nombre, nombreU, humedad, status, usuario_id
         }).then((res) => {
             if (res.status === 201) {
-                alert("Tu nueva planta se acaba de crear, te ayudaremos a cuidarla :3")
+                showAlert('¡Felicidades!' ,'Te ayudaremos a cuidarla :3', 'success')
                 navigate("/home")
                 return;
             }
-            alert("Algo sucedio mal, intentalo mas tarde")
+            showAlert('¡Error!' ,'Algo sucedio mal, intentalo mas tarde', 'error')
         }).catch((err) => {
-            alert("Algo se rompio, intentalo mas tarde")
+            showAlert('¡Error!' ,'Algo sucedio mal, intentalo mas tarde', 'error')
             const cookies = new Cookies();
             cookies.remove('token')
         })
