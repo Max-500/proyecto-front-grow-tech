@@ -4,7 +4,7 @@ import Cookies from 'universal-cookie'
 const cookies = new Cookies()
 
 const instance = axios.create({
-  baseURL: 'http://backend-growtech.servehttp.com'
+  baseURL: 'https://backend-growtech.servehttp.com'
 })
 
 instance.interceptors.request.use(config => {
