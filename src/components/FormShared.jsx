@@ -5,7 +5,6 @@ import { UserContext } from "../contexts/UserContext";
 import axios from "../AxiosSetting/axios.js"
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
-import { showAlert } from "../SweetAlerts/SweetAlerts";
 
 // eslint-disable-next-line react/prop-types
 const FormShared = ({ newAccount, inputEmail, boton }) => {
@@ -25,11 +24,11 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
                 password
             }).then((res) => {
                 if(res.status === 201){
-                    showAlert('¡Felicidades!' ,'Se creo tu cuenta :)', 'success')
+                    alert('¡Felicidades! Se creo tu cuenta :)')
                     navigate("/login");
                 }
             }).catch((err) => {
-                showAlert('¡Error!' ,'El correo o usuario ya existe', 'error')
+                alert("Algo sucedio mal, intentalo mas tarde")
             })
             return;
         }
@@ -47,7 +46,7 @@ const FormShared = ({ newAccount, inputEmail, boton }) => {
                 return;
             }
         }).catch((err) => {
-            showAlert('¡Error!' ,'Usuario o contraseña incorrecto', 'error')
+            alert('Usuario o contraseña incorrecto')
         })
     }
 

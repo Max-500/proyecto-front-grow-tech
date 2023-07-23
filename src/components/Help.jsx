@@ -4,7 +4,6 @@ import { UserContext } from "../contexts/UserContext"
 import Cookies from "universal-cookie";
 import axios from "../AxiosSetting/axios";
 import { useNavigate } from "react-router-dom";
-import { showAlert } from "../SweetAlerts/SweetAlerts";
 
 const Help = () => {
 
@@ -17,14 +16,14 @@ const Help = () => {
             username
         }).then((res) => {
             if (res.status === 200) {
-                showAlert('¡Correo Enviado!' ,'La ayuda llegara pronto :)', 'info')
+                alert('¡Correo Enviado! La ayuda llegara pronto :)')
                 navigate("/home")
                 return;
             }
-            showAlert('¡Error!' ,'Algo sucedio mal, intental', 'error')
+            alert('¡Error! Algo sucedio mal, intentalo mas tarde')
             return;
         }).catch((err) => {
-            showAlert('¡Error!' ,'Algo sucedio mal, intental', 'error')
+            alert('¡Error! Algo sucedio mal, intentalo mas tarde')
             console.log(err)
             const cookies = new Cookies();
             cookies.remove('token')

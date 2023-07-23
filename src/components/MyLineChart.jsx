@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import Cookies from 'universal-cookie';
 import axios from "../AxiosSetting/axios.js"
-import { showAlert } from '../SweetAlerts/SweetAlerts';
 
 const MyLineChart = () => {
 
@@ -28,11 +27,11 @@ const MyLineChart = () => {
           setData(sortedData)
           return;
         }
-        showAlert('¡Error!', 'Verifica tu conexion a internet', 'error');
+        alert('¡Error! Verifica tu conexion a internet');
         cookies.remove('token')
       })
       .catch((err) => {
-        showAlert('¡Error!', 'Verifica tu conexion a internet', 'error');
+        alert('¡Error! Verifica tu conexion a internet');
         cookies.remove('token')
       })
   }, [])

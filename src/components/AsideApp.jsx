@@ -10,10 +10,6 @@ const AsideApp = () => {
     const cookies = new Cookies();
     const userId = cookies.get('user_id')
 
-    const downloadReports = () => {
-        alert("Hola")
-    }
-
     const logout = () => {
         cookies.remove('token')
         cookies.remove('username')

@@ -2,7 +2,6 @@ import Cookies from "universal-cookie";
 import PlantRow from "../components/PlantRow";
 import { useRef, useState, useEffect } from "react";
 import axios from "../AxiosSetting/axios"
-import { showAlert } from "../SweetAlerts/SweetAlerts";
 import { useNavigate } from "react-router-dom";
 
 const Table = () => {
@@ -42,7 +41,7 @@ const Table = () => {
                 setAllPlants(modifiedArr)
             })
             .catch((err) => {
-                showAlert('¡Error!', 'Verifica tu conexion a internet', 'error');
+                alert('¡Error! Verifica tu conexion a internet');
             })
     }, [])
 
